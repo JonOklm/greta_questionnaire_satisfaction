@@ -1,6 +1,5 @@
 package com.example.greta_questionnaire_satisfaction.entity;
 
-import javax.persistence.*;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -79,6 +78,10 @@ public class Formation {
         this.description = description;
         this.date_debut = date_debut;
         this.date_fin = date_fin;
+    }
+
+    public Formation() {
+        //TODO Auto-generated constructor stub
     }
 
     @Override

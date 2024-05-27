@@ -17,14 +17,14 @@
         <input type="text" th:field="*{description}">
         <br>
         <label for="date_debut">Date début:</label>
-        <input type="text" th:field="*{date_debut}">
+        <input type="date" th:field="*{date_debut}">
         <br>
         <label for="date_fin">Date de fin:</label>
-        <input type="text" th:field="*{date_fin}">
+        <input type="date" th:field="*{date_fin}">
         <br>
         <button type="submit">Save</button>
     </form>
     <a th:href="@{/list}">Back to List</a>
 </body>
 
-</html>
+</html> 

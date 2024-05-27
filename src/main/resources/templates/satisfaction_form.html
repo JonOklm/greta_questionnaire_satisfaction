@@ -1,50 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="fr">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Satisfaction Questionnaire</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  </head>
-  <body class="bg-gray-100">
-    <div class="container mx-auto mt-8">
-      <h1 class="text-xl font-bold text-center mb-4">Satisfaction Questionnaire</h1>
-      <form action="/submit-form" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-        <div class="mb-4">
-          <label class="block text-gray-700 text-sm font-bold mb-2" for="overall-satisfaction">
-            Overall Satisfaction (1-5)
-          </label>
-          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="overall-satisfaction" type="number" min="1" max="5" name="overall_satisfaction" required>
-        </div>
-        <div class="mb-4">
-          <label class="block text-gray-700 text-sm font-bold mb-2" for="ease-of-use">
-            Ease of Use (1-5)
-          </label>
-          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="ease-of-use" type="number" min="1" max="5" name="ease_of_use" required>
-        </div>
-        <div class="mb-4">
-          <label class="block text-gray-700 text-sm font-bold mb-2" for="heard-about">
-            How did you hear about us?
-          </label>
-          <select class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" id="heard-about" name="heard_about">
-            <option value="internet">Internet</option>
-            <option value="friend">Friend</option>
-            <option value="advertisement">Advertisement</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-        <div class="mb-6">
-          <label class="block text-gray-700 text-sm font-bold mb-2" for="comments">
-            Additional Comments
-          </label>
-          <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="comments" name="comments" rows="4"></textarea>
-        </div>
-        <div class="flex items-center justify-between">
-          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
-            Submit
-          </button>
-        </div>
-      </form>
+    <title>Questionnaire de Satisfaction</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Questionnaire de Satisfaction</h2>
+        <form action="/submit" method="post">
+            <label for="name">Nom :</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required>
+
+            <label>1. Comment évalueriez-vous notre service client ?</label>
+            <div class="rating">
+                <label>1<input type="radio" name="service_client" value="1" required></label>
+                <label>2<input type="radio" name="service_client" value="2"></label>
+                <label>3<input type="radio" name="service_client" value="3"></label>
+                <label>4<input type="radio" name="service_client" value="4"></label>
+                <label>5<input type="radio" name="service_client" value="5"></label>
+            </div>
+
+            <label>2. Comment évalueriez-vous la qualité de nos produits ?</label>
+            <div class="rating">
+                <label>1<input type="radio" name="qualite_produits" value="1" required></label>
+                <label>2<input type="radio" name="qualite_produits" value="2"></label>
+                <label>3<input type="radio" name="qualite_produits" value="3"></label>
+                <label>4<input type="radio" name="qualite_produits" value="4"></label>
+                <label>5<input type="radio" name="qualite_produits" value="5"></label>
+            </div>
+
+            <label>3. Recommanderiez-vous nos services à vos proches ?</label>
+            <div class="rating">
+                <label>1<input type="radio" name="recommander" value="1" required></label>
+                <label>2<input type="radio" name="recommander" value="2"></label>
+                <label>3<input type="radio" name="recommander" value="3"></label>
+                <label>4<input type="radio" name="recommander" value="4"></label>
+                <label>5<input type="radio" name="recommander" value="5"></label>
+            </div>
+
+            <label for="comments">Commentaires ou suggestions :</label>
+            <textarea id="comments" name="comments" rows="4" placeholder="Vos commentaires..."></textarea>
+
+            <input type="submit" value="Envoyer">
+        </form>
     </div>
-  </body>
+</body>
 </html>

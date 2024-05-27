@@ -24,10 +24,10 @@ public class ThymeleafController {
  
  
  @GetMapping("/list")
- public String showPersonList(Model model) {
+ public String showFormationList(Model model) {
  List<Formation> formation = formationService.getAllFormations();
  model.addAttribute("formation", formation);
- return "FormationList";
+ return "formationList";
  }
 
  @GetMapping("/add")
@@ -36,10 +36,10 @@ public class ThymeleafController {
  return "addEditFormations";
  }
  @GetMapping("/edit/{id}")
- public String showEditPersonForm(@PathVariable Long id, Model model) {
+ public String showEditFormationForm(@PathVariable Long id, Model model) {
 Formation formation = formationService.getFormationById(id);
 model.addAttribute("formation", formation);
- return "addEditFormation";
+ return "addEditFormations";
  }
  @PostMapping("/save")
  public String savePerson(@ModelAttribute Formation formation) {

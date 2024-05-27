@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formation List</title>
+</head>
+
+<body>
+    <h2>Formation List</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nom Formation</th>
+                <th>Description</th>
+                <th>Date début</th>
+                <th>Date fin</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="formation : ${formation}">
+                <td th:text="${formation.id}"></td>
+                <td th:text="${formation.nomFormation}"></td>
+                <td th:text="${formation.description}"></td>
+                <td th:text="${formation.date_debut}"></td>
+                <td th:text="${formation.date_fin}"></td>
+                <td>
+                    <a th:href="@{'/edit/' + ${formation.id}}">Edit</a>
+                    <a th:href="@{'/delete/' + ${formation.id}}">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a th:href="@{/add}">Add Formation</a>
+</body>
+
+</html>
